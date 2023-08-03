@@ -1,0 +1,1 @@
+saludo = require('saludo.js')
