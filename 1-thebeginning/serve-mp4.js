@@ -10,9 +10,9 @@ http
     // Cambia el type por "video/mp4"
     res.writeHead(200, { "Content-Type": "video/mp4" });
     // Lee el contenido del archivo data.json
-    fs.existsSync("./thebeginning/video.mp4", (existsSync) => {
+    fs.existsSync("./1-thebeginning/video.mp4", (existsSync) => {
       if (existsSync) {
-        fs.createReadStream("./thebeginning/video.mp4").pipe(res);
+        fs.createReadStream("./1-thebeginning/video.mp4").pipe(res);
       } else {
         res.send("Error: 404");
         res.end();

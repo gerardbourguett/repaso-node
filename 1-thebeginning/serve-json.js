@@ -19,7 +19,7 @@ http
     // Enviar la respuesta
     res.end(JSON.stringify(json_res)); /* 
   // Lee el contenido del archivo data.json
-  fs.readFile("./thebeginning/data.json", (err, data) => {
+  fs.readFile("./1-thebeginning/data.json", (err, data) => {
     if (err) throw err;
     console.log("Exito");
     res.end(data);

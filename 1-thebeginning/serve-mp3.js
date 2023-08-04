@@ -10,9 +10,9 @@ http
     // Cambia el type por "audio/mp3"
     res.writeHead(200, { "Content-Type": "audio/mp3" });
     // Lee el contenido del archivo data.json
-    fs.existsSync("./thebeginning/audio.mp3", (existsSync) => {
+    fs.existsSync("./1-thebeginning/audio.mp3", (existsSync) => {
       if (existsSync) {
-        fs.createReadStream("./thebeginning/audio.mp3").pipe(res);
+        fs.createReadStream("./1-thebeginning/audio.mp3").pipe(res);
       } else {
         res.send("Error: 404");
         res.end();

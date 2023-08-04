@@ -10,7 +10,7 @@ http
     // Cambia el type por "application/pdf"
     res.writeHead(200, { "Content-Type": "application/pdf" });
     // Lee el contenido del archivo data.json
-    fs.readFile("./thebeginning/index.pdf", (err, data) => {
+    fs.readFile("./1-thebeginning/index.pdf", (err, data) => {
       if (err) {
         res.json({ status: "error", message: err });
       } else {
