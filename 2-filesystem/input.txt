@@ -1,0 +1,1 @@
+Esto se agregará al archivo input.js. de forma asíncrona.Y esto se agregará de forma síncrona
