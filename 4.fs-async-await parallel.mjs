@@ -5,24 +5,13 @@
 
 const { readFile } = require("node:fs/promises");
 
-console.log("Leyendo el primer archivo");
-const text = await readFile("./archivo.txt", "utf-8");
-console.log(text);
-
-console.log("Leyendo el segundo archivo");
-const secontText = await readFile("./archivo2.txt", "utf-8");
-console.log(secontText);
-
-//IIFE = Immediately Invoked Function Expression
-/* (async () => {
-  console.log("Leyendo el primer archivo");
-  const text = await readFile("./archivo.txt", "utf-8");
-  console.log(text);
-
-  console.log("Leyendo el segundo archivo");
-  const secontText = await readFile("./archivo2.txt", "utf-8");
-  console.log(secontText);
-})(); */
+Promise.all([
+  readFile("./archivo.txt", "utf-8"),
+  readFile("./archivo2.txt", "utf-8"),
+]).then(([text, secondText]) => {
+  console.log("Primer texto", text);
+  console.log("Segundo texto", secondText);
+});
 
 // Leyendo el primer archivo
 // Y esto se agregará de forma síncrona
