@@ -1,5 +1,6 @@
 const fs = require("node:fs/promises"); // Importa el módulo 'fs' de Node.js para trabajar con archivos y directorios utilizando promesas.
 const path = require("node:path"); // Importa el módulo 'path' de Node.js para trabajar con rutas de archivo y directorio.
+const picocolors = require("picocolors"); // Importa el módulo 'picocolors' para dar color a la salida en la consola.
 
 const folder = process.argv[2] ?? "."; // Asigna el tercer argumento de la línea de comandos a la variable 'folder', o utiliza el valor por defecto "." si no se proporciona ningún tercer argumento.
 
@@ -31,9 +32,9 @@ async function ls(folder) {
     const fileSize = stats.size; // Obtiene el tamaño del archivo.
     const fileModified = stats.mtime.toLocaleString(); // Obtiene la fecha de modificación del archivo en formato legible.
 
-    return `${fileType} ${file.padEnd(20)} ${fileSize
-      .toString()
-      .padStart(10)} ${fileModified}`; // Devuelve una cadena que representa la información del archivo en el formato deseado, utilizando el método 'padEnd' para agregar espacios en blanco al final del nombre del archivo y el método 'padStart' para agregar ceros al principio del tamaño del archivo.
+    return `${fileType} ${picocolors.blue(file.padEnd(20))} ${picocolors.green(
+      fileSize.toString().padStart(10)
+    )} ${picocolors.yellow(fileModified)}`; // Devuelve una cadena que representa la información del archivo en el formato deseado, utilizando el método 'padEnd' para agregar espacios en blanco al final del nombre del archivo y el método 'padStart' para agregar ceros al principio del tamaño del archivo.
   });
 
   const filesInfo = await Promise.all(filesPromises); // Espera a que todas las promesas en 'filesPromises' se resuelvan.
