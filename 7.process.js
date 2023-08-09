@@ -10,11 +10,11 @@ process.on("exit", () => {
 });
 
 // current working directory
-console.log(process.cwd());
+console.log(process.cwd()); // C:\Users\gabc_\OneDrive\Documentos\node\curso
 
 // platform
-console.log(process.platform);
-console.log(process.env.OS);
+console.log(process.platform); // win32
+console.log(process.env.OS); // Windows NT
 
 /* 
 [
